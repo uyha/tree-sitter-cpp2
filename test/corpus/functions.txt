@@ -1,0 +1,16 @@
+=============================================
+Function with no parameter and no return type
+=============================================
+main : () = {}
+
+---
+
+(source_file
+  (declaration
+    (identifier)
+    (function_type
+      (parameter_declaration_list)
+    )
+    (statement)
+  )
+)
