@@ -9,8 +9,138 @@ main : () = {}
   (declaration
     (identifier)
     (function_type
-      (parameter_declaration_list)
+      (parameter_list)
     )
     (statement)
   )
 )
+
+==============================================
+Function with one parameter and no return type
+==============================================
+
+fn : (x: int) = {}
+
+---
+
+(source_file
+  (declaration
+    (identifier)
+    (function_type
+      (parameter_list
+        (parameter
+          (identifier)
+          (type_id (identifier))
+        )
+      )
+    )
+    (statement)
+  )
+)
+
+===============================================
+Function with two parameters and no return type
+===============================================
+
+fn : (x: int, y: int) = {}
+
+---
+
+(source_file
+  (declaration
+    (identifier)
+    (function_type
+      (parameter_list
+        (parameter
+          (identifier)
+          (type_id (identifier))
+        )
+        (parameter
+          (identifier)
+          (type_id (identifier))
+        )
+      )
+    )
+    (statement)
+  )
+)
+
+============================
+Function with this parameter
+============================
+
+fn : (this) = {}
+
+---
+(source_file
+  (declaration
+    (identifier)
+    (function_type
+      (parameter_list
+        (parameter_this)
+      )
+    )
+    (statement)
+  )
+)
+
+==========================================
+Function with this parameter and specifier
+==========================================
+
+fn : (implicit this) = {}
+
+---
+
+(source_file
+  (declaration
+    (identifier)
+    (function_type
+      (parameter_list
+        (parameter_this (this_specifier))
+      )
+    )
+    (statement)
+  )
+)
+
+==========================================
+Function with this parameter and direction
+==========================================
+
+fn : (out this) = {}
+
+---
+
+(source_file
+  (declaration
+    (identifier)
+    (function_type
+      (parameter_list
+        (parameter_this (direction))
+      )
+    )
+    (statement)
+  )
+)
+
+======================================================
+Function with this parameter, specifier, and direction
+======================================================
+
+fn : (virtual out this) = {}
+
+---
+
+(source_file
+  (declaration
+    (identifier)
+    (function_type
+      (parameter_list
+        (parameter_this (this_specifier) (direction))
+      )
+    )
+    (statement)
+  )
+)
+

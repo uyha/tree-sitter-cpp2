@@ -36,29 +36,14 @@
       "required": true,
       "types": [
         {
-          "type": "parameter_declaration_list",
+          "type": "parameter_list",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "parameter_declaration_list",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": false,
-      "types": [
-        {
-          "type": "parameter_declaration_seq",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "parameter_declaration_seq",
+    "type": "parameter",
     "named": true,
     "fields": {},
     "children": {
@@ -66,7 +51,45 @@
       "required": true,
       "types": [
         {
-          "type": "parameter_declaration_seq",
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "type_id",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "parameter_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "parameter",
+          "named": true
+        },
+        {
+          "type": "parameter_this",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "parameter_this",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "direction",
           "named": true
         },
         {
@@ -99,17 +122,31 @@
   {
     "type": "this_specifier",
     "named": true,
+    "fields": {}
+  },
+  {
+    "type": "type_id",
+    "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
-      "required": false,
+      "multiple": true,
+      "required": true,
       "types": [
         {
-          "type": "direction",
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "type_qualifier",
           "named": true
         }
       ]
     }
+  },
+  {
+    "type": "type_qualifier",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "(",
@@ -117,6 +154,10 @@
   },
   {
     "type": ")",
+    "named": false
+  },
+  {
+    "type": "*",
     "named": false
   },
   {
@@ -129,6 +170,10 @@
   },
   {
     "type": "=",
+    "named": false
+  },
+  {
+    "type": "const",
     "named": false
   },
   {
