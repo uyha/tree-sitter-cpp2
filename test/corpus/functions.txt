@@ -5,13 +5,13 @@ main : () = {}
 
 ---
 
-(source_file
+(translation_unit
   (declaration
     (identifier)
     (function_type
       (parameter_list)
     )
-    (statement)
+    (statement (compound_statement))
   )
 )
 
@@ -23,7 +23,7 @@ fn : (x: int) = {}
 
 ---
 
-(source_file
+(translation_unit
   (declaration
     (identifier)
     (function_type
@@ -34,7 +34,7 @@ fn : (x: int) = {}
         )
       )
     )
-    (statement)
+    (statement (compound_statement))
   )
 )
 
@@ -46,7 +46,7 @@ fn : (x: int, y: int) = {}
 
 ---
 
-(source_file
+(translation_unit
   (declaration
     (identifier)
     (function_type
@@ -61,7 +61,7 @@ fn : (x: int, y: int) = {}
         )
       )
     )
-    (statement)
+    (statement (compound_statement))
   )
 )
 
@@ -72,7 +72,7 @@ Function with this parameter
 fn : (this) = {}
 
 ---
-(source_file
+(translation_unit
   (declaration
     (identifier)
     (function_type
@@ -80,7 +80,7 @@ fn : (this) = {}
         (parameter_this)
       )
     )
-    (statement)
+    (statement (compound_statement))
   )
 )
 
@@ -92,7 +92,7 @@ fn : (implicit this) = {}
 
 ---
 
-(source_file
+(translation_unit
   (declaration
     (identifier)
     (function_type
@@ -100,7 +100,7 @@ fn : (implicit this) = {}
         (parameter_this (this_specifier))
       )
     )
-    (statement)
+    (statement (compound_statement))
   )
 )
 
@@ -112,7 +112,7 @@ fn : (out this) = {}
 
 ---
 
-(source_file
+(translation_unit
   (declaration
     (identifier)
     (function_type
@@ -120,7 +120,7 @@ fn : (out this) = {}
         (parameter_this (direction))
       )
     )
-    (statement)
+    (statement (compound_statement))
   )
 )
 
@@ -132,7 +132,7 @@ fn : (virtual out this) = {}
 
 ---
 
-(source_file
+(translation_unit
   (declaration
     (identifier)
     (function_type
@@ -140,7 +140,7 @@ fn : (virtual out this) = {}
         (parameter_this (this_specifier) (direction))
       )
     )
-    (statement)
+    (statement (compound_statement))
   )
 )
 
