@@ -15,6 +15,23 @@ main : () = {}
   )
 )
 
+================================================================
+Function with no parameter and no return type with no equal sign
+================================================================
+main : () {}
+
+---
+
+(translation_unit
+  (declaration
+    (identifier)
+    (function_type
+      (parameter_list)
+    )
+    (statement (compound_statement))
+  )
+)
+
 ==============================================
 Function with one parameter and no return type
 ==============================================
@@ -144,3 +161,32 @@ fn : (virtual out this) = {}
   )
 )
 
+============================================
+Function with a single statement as its body
+============================================
+
+public fn : () = a
+
+---
+
+(translation_unit
+  (declaration
+  )
+)
+
+=================================
+Function with an access specifier
+=================================
+
+public fn : () {}
+
+---
+
+(translation_unit
+  (declaration
+    (access_specifier)
+    (identifier)
+    (function_type (parameter_list))
+    (statement (compound_statement))
+  )
+)

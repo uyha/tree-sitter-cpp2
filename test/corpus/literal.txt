@@ -1,0 +1,193 @@
+==============================
+Bare decimal literal [literal]
+==============================
+
+a := 1;
+
+---
+
+(translation_unit
+  (declaration
+    (identifier)
+    (statement (integer_literal))
+  )
+)
+
+===========================================
+Suffixed a single integer literal [literal]
+===========================================
+
+a := 1u;
+a := 1l;
+a := 1ll;
+a := 1z;
+
+a := 1U;
+a := 1L;
+a := 1LL;
+a := 1Z;
+
+---
+
+(translation_unit
+  (declaration (identifier) (statement (integer_literal (integer_suffix))))
+  (declaration (identifier) (statement (integer_literal (integer_suffix))))
+  (declaration (identifier) (statement (integer_literal (integer_suffix))))
+  (declaration (identifier) (statement (integer_literal (integer_suffix))))
+
+  (declaration (identifier) (statement (integer_literal (integer_suffix))))
+  (declaration (identifier) (statement (integer_literal (integer_suffix))))
+  (declaration (identifier) (statement (integer_literal (integer_suffix))))
+  (declaration (identifier) (statement (integer_literal (integer_suffix))))
+)
+
+==============================================
+Suffixed lower case integer literals [literal]
+==============================================
+
+a := 1ul;
+a := 1ull;
+a := 1uz;
+
+a := 1lu;
+a := 1llu;
+a := 1zu;
+
+---
+
+(translation_unit
+  (declaration (identifier) (statement (integer_literal (integer_suffix))))
+  (declaration (identifier) (statement (integer_literal (integer_suffix))))
+  (declaration (identifier) (statement (integer_literal (integer_suffix))))
+
+  (declaration (identifier) (statement (integer_literal (integer_suffix))))
+  (declaration (identifier) (statement (integer_literal (integer_suffix))))
+  (declaration (identifier) (statement (integer_literal (integer_suffix))))
+)
+
+==============================================
+Suffixed upper case integer literals [literal]
+==============================================
+
+a := 1UL;
+a := 1ULL;
+a := 1UZ;
+
+a := 1LU;
+a := 1LLU;
+a := 1ZU;
+
+---
+
+(translation_unit
+  (declaration (identifier) (statement (integer_literal (integer_suffix))))
+  (declaration (identifier) (statement (integer_literal (integer_suffix))))
+  (declaration (identifier) (statement (integer_literal (integer_suffix))))
+
+  (declaration (identifier) (statement (integer_literal (integer_suffix))))
+  (declaration (identifier) (statement (integer_literal (integer_suffix))))
+  (declaration (identifier) (statement (integer_literal (integer_suffix))))
+)
+
+==============================================
+Suffixed mixed case integer literals [literal]
+==============================================
+
+a := 1uL;
+a := 1uLL;
+a := 1uZ;
+
+a := 1Ul;
+a := 1Ull;
+a := 1Uz;
+
+a := 1lU;
+a := 1llU;
+a := 1zU;
+
+a := 1Lu;
+a := 1LLu;
+a := 1Zu;
+
+---
+
+(translation_unit
+  (declaration (identifier) (statement (integer_literal (integer_suffix))))
+  (declaration (identifier) (statement (integer_literal (integer_suffix))))
+  (declaration (identifier) (statement (integer_literal (integer_suffix))))
+
+  (declaration (identifier) (statement (integer_literal (integer_suffix))))
+  (declaration (identifier) (statement (integer_literal (integer_suffix))))
+  (declaration (identifier) (statement (integer_literal (integer_suffix))))
+
+  (declaration (identifier) (statement (integer_literal (integer_suffix))))
+  (declaration (identifier) (statement (integer_literal (integer_suffix))))
+  (declaration (identifier) (statement (integer_literal (integer_suffix))))
+
+  (declaration (identifier) (statement (integer_literal (integer_suffix))))
+  (declaration (identifier) (statement (integer_literal (integer_suffix))))
+  (declaration (identifier) (statement (integer_literal (integer_suffix))))
+)
+
+=============================================================
+Space between literal and suffix should be an error [literal]
+:error
+=============================================================
+
+a := 0 u;
+
+---
+
+=================================
+Binary integer literasl [literal]
+=================================
+
+a := 0b0;
+a := 0b1;
+a := 0B0;
+a := 0B1;
+a := 0b010101;
+
+---
+
+(translation_unit
+  (declaration (identifier) (statement (integer_literal)))
+  (declaration (identifier) (statement (integer_literal)))
+  (declaration (identifier) (statement (integer_literal)))
+  (declaration (identifier) (statement (integer_literal)))
+  (declaration (identifier) (statement (integer_literal)))
+)
+
+================================
+Octal integer literasl [literal]
+================================
+
+a := 0;
+a := 07;
+
+---
+
+(translation_unit
+  (declaration (identifier) (statement (integer_literal)))
+  (declaration (identifier) (statement (integer_literal)))
+)
+
+======================================
+Hexadecimal integer literasl [literal]
+======================================
+
+a := 0x0;
+a := 0xabcdef;
+a := 0xABCDEF;
+a := 0Xabcdef;
+a := 0XABCDEF;
+
+---
+
+(translation_unit
+  (declaration (identifier) (statement (integer_literal)))
+  (declaration (identifier) (statement (integer_literal)))
+  (declaration (identifier) (statement (integer_literal)))
+  (declaration (identifier) (statement (integer_literal)))
+  (declaration (identifier) (statement (integer_literal)))
+)
